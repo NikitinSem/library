@@ -1,0 +1,20 @@
+let x;
+let y;
+$(document).mousemove( function(event) {
+  x = event.pageX;
+  y = event.pageY;
+
+    $('.drag').mousedown( function() {
+      $(document).mousemove( function(){
+      $('.drag').css({'left':x-49, 'top':y-49,'position':'absolute'});
+      })
+    })
+  
+     $('.drag').mouseup( function(event) {  
+       $(document).mousemove(function() {
+         let cur_x = event.pageX;
+         let cur_y = event.pageY;
+        $('.drag').css({'left':cur_x-49, 'top':cur_y-49,'position':'absolute'});
+       })
+    })
+})
